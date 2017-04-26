@@ -2,7 +2,7 @@
 /**
  * Created by PhpStorm.
  * User: aydinanl
- * Date: 27.04.2017
- * Time: 00:16
+ * Date: 15.04.2017
+ * Time: 01:54
  */
-echo "test 5";
+header('Location: public/index.php');

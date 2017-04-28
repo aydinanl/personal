@@ -4,20 +4,13 @@ class Article extends Controller
 {
     public function index($articleID="",$articleName="")
     {
-        /*
-         * Methoda model kullanılması için gerekenler:
-        $user = $this->model('user');
-        $user->name = $name;
-        echo $name;
-        */
+        //Connect to Model
         $system = $this->model('System');
+        $articles = $this->model('Articles');
 
+        //Load data due to Model
+        $getArticle    = $articles->getArticleById($articleID);
 
-        /*
-        $sef = "Swift 3 - PopUp Nasıl Yapılır ? - XCode 8 (Blur Effect)";
-        $sef_convert = $system->seflink($sef);
-        echo $sef_convert;
-        */
         //Load views
         require VIEW_PATH . "templates/header.php";
         require VIEW_PATH . "article/index.php";

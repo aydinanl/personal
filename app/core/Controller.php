@@ -12,7 +12,7 @@ class Controller
     {
         //Veritabanı bağlama
         try {
-            $this->db = new PDO('mysql:dbname=videoportal;charset=utf8;host=localhost','root',''); //Veritabanına bağlantı
+            $this->db = new PDO('mysql:dbname=personal;charset=utf8;host=localhost','root',''); //Veritabanına bağlantı
         }catch (PDOException $e) {
             die($e->getMessage());
         }

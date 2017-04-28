@@ -9,15 +9,21 @@ class Blog extends Controller
         $user = $this->model('user');
         $user->name = $name;
         echo $name;
-        */
-        $system = $this->model('System');
 
-
-        /*
+        //Seflink yap.
         $sef = "Swift 3 - PopUp Nasıl Yapılır ? - XCode 8 (Blur Effect)";
         $sef_convert = $system->seflink($sef);
         echo $sef_convert;
         */
+
+        //Connect to Model
+        $system = $this->model('System');
+        $categories = $this->model('Categories');
+        $articles = $this->model('Articles');
+
+        //Load data due to Model
+        $getCategories  = $categories->getCat();
+        $getArticles    = $articles->getAllArticles();
 
         //Load views
         require VIEW_PATH . "templates/header.php";

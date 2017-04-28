@@ -12,8 +12,14 @@ class Category extends Controller
             //Category ID yoksa Ana sayfaya yönlendir.
             header('location: '.URL);
         }
-        //Model Connections
+        //Connect to Model
         $system = $this->model('System');
+        $categories = $this->model('Categories');
+        $articles = $this->model('Articles');
+
+        //Load data due to Model
+        $getCategories = $categories->getCat();
+        $getArticles    = $articles->getAllArticlesByCatID($catID);
 
         //Load views
         require VIEW_PATH . "templates/header.php";

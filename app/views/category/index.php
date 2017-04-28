@@ -10,107 +10,37 @@
                 <input type="checkbox" id="kategoriler">
                 <label for="kategoriler" onclick><i class="fa fa-bars" aria-hidden="true"></i></label>
                 <ul>
-                    <li><a href="<?php echo URL . 'category/' . '1/' .'hayat' ?>">#Hayat</a></li>
-                    <li><a href="#">#Kitap</a></li>
-                    <li><a href="#">#Sinema</a></li>
-                    <li><a href="#">#Linux</a></li>
-                    <li><a href="#">#Yazılım</a></li>
-                    <li><a href="#">#Php</a></li>
-                    <li><a href="#">#HTML&CSS</a></li>
-                    <li><a href="#">#C</a></li>
-                    <li><a href="#">#JAVA</a></li>
+                    <?php
+                    foreach ($getCategories as $category){
+                        ?>
+                        <li><a href="<?php echo URL . 'category/' . $category->cat_id . '/' . lcfirst($category->cat_name) ?>">#<?php echo $category->cat_name; ?></a></li>
+                        <?php
+                    }
+                    ?>
                 </ul>
             </div>
-            <div class="post">
-                <img class="post-img" src="<?php echo URL ?>assets/img/post-img.png" alt="Post Adı">
-                <div class="post-title">
-                    <h2><a href="<?php echo URL . 'article/' . '0/' . 'hello-word' ?>">Hayatdan Makaleler.</a></h2>
+            <?php
+            foreach ($getArticles as $article){
+                ?>
+                <div class="post">
+                    <img class="post-img" src="<?= URL . $article->art_cover?>" alt="Post Adı">
+                    <div class="post-title">
+                        <h2><a href="<?php echo URL . 'article/' . $article->art_id . '/' . $article->art_sef_link ?>"><?=$article->art_name?></a></h2>
+                    </div>
+                    <div class="post-informations">
+                        <span><?=substr($article->art_date,0,11)?></span><span class="post-informations-breaker">/</span><span><a href="#">Business</a>, <a
+                                    href="#">Company</a></span><span class="post-informations-breaker">/</span><span>2 Comments</span>
+                    </div>
+                    <div class="post-content">
+                        <p><?=substr($article->art_content,0,450) . "..."?></p>
+                    </div>
+                    <div class="devamini-oku">
+                        <a href="<?php echo URL . 'article/' . $article->art_id . '/' . $article->art_sef_link ?>">Devamını Oku</a>
+                    </div>
                 </div>
-                <div class="post-informations">
-                    <span>December 06, 2016</span><span class="post-informations-breaker">/</span><span><a href="#">Business</a>, <a
-                            href="#">Company</a></span><span class="post-informations-breaker">/</span><span>2 Comments</span>
-                </div>
-                <div class="post-content">
-                    <p>Blanditiis dapibus, aliquet ullam in ut, conubia turpis dolore vivamus ligula deserunt, vehicula
-                        praesent iure? Magni? Porta minus pariatur ante dolore, veniam cubilia urna? Eligendi commodo
-                        fugiat voluptate, rerum orci neque voluptatem cum repellendus exercitation pellentesque. </p>
-                </div>
-                <div class="devamini-oku">
-                    <a href="<?php echo URL . 'article/' . '0/' . 'hello-word' ?>">Devamını Oku</a>
-                </div>
-            </div>
-            <div class="post">
-                <img class="post-img" src="<?php echo URL ?>assets/img/post-img.png" alt="Post Adı">
-                <div class="post-title">
-                    <h2><a href="<?php echo URL . 'article/' . '0/' . 'hello-word' ?>">Hayatdan Makaleler.</a></h2>
-                </div>
-                <div class="post-informations">
-                    <span>December 06, 2016</span><span class="post-informations-breaker">/</span><span><a href="#">Business</a>, <a
-                                href="#">Company</a></span><span class="post-informations-breaker">/</span><span>2 Comments</span>
-                </div>
-                <div class="post-content">
-                    <p>Blanditiis dapibus, aliquet ullam in ut, conubia turpis dolore vivamus ligula deserunt, vehicula
-                        praesent iure? Magni? Porta minus pariatur ante dolore, veniam cubilia urna? Eligendi commodo
-                        fugiat voluptate, rerum orci neque voluptatem cum repellendus exercitation pellentesque. </p>
-                </div>
-                <div class="devamini-oku">
-                    <a href="<?php echo URL . 'article/' . '0/' . 'hello-word' ?>">Devamını Oku</a>
-                </div>
-            </div>
-            <div class="post">
-                <img class="post-img" src="<?php echo URL ?>assets/img/post-img.png" alt="Post Adı">
-                <div class="post-title">
-                    <h2><a href="<?php echo URL . 'article/' . '0/' . 'hello-word' ?>">Hayatdan Makaleler.</a></h2>
-                </div>
-                <div class="post-informations">
-                    <span>December 06, 2016</span><span class="post-informations-breaker">/</span><span><a href="#">Business</a>, <a
-                                href="#">Company</a></span><span class="post-informations-breaker">/</span><span>2 Comments</span>
-                </div>
-                <div class="post-content">
-                    <p>Blanditiis dapibus, aliquet ullam in ut, conubia turpis dolore vivamus ligula deserunt, vehicula
-                        praesent iure? Magni? Porta minus pariatur ante dolore, veniam cubilia urna? Eligendi commodo
-                        fugiat voluptate, rerum orci neque voluptatem cum repellendus exercitation pellentesque. </p>
-                </div>
-                <div class="devamini-oku">
-                    <a href="<?php echo URL . 'article/' . '0/' . 'hello-word' ?>">Devamını Oku</a>
-                </div>
-            </div>
-            <div class="post">
-                <img class="post-img" src="<?php echo URL ?>assets/img/post-img.png" alt="Post Adı">
-                <div class="post-title">
-                    <h2><a href="<?php echo URL . 'article/' . '0/' . 'hello-word' ?>">Hayatdan Makaleler.</a></h2>
-                </div>
-                <div class="post-informations">
-                    <span>December 06, 2016</span><span class="post-informations-breaker">/</span><span><a href="#">Business</a>, <a
-                                href="#">Company</a></span><span class="post-informations-breaker">/</span><span>2 Comments</span>
-                </div>
-                <div class="post-content">
-                    <p>Blanditiis dapibus, aliquet ullam in ut, conubia turpis dolore vivamus ligula deserunt, vehicula
-                        praesent iure? Magni? Porta minus pariatur ante dolore, veniam cubilia urna? Eligendi commodo
-                        fugiat voluptate, rerum orci neque voluptatem cum repellendus exercitation pellentesque. </p>
-                </div>
-                <div class="devamini-oku">
-                    <a href="<?php echo URL . 'article/' . '0/' . 'hello-word' ?>">Devamını Oku</a>
-                </div>
-            </div>
-            <div class="post">
-                <img class="post-img" src="<?php echo URL ?>assets/img/post-img.png" alt="Post Adı">
-                <div class="post-title">
-                    <h2><a href="<?php echo URL . 'article/' . '0/' . 'hello-word' ?>">Hayatdan Makaleler.</a></h2>
-                </div>
-                <div class="post-informations">
-                    <span>December 06, 2016</span><span class="post-informations-breaker">/</span><span><a href="#">Business</a>, <a
-                                href="#">Company</a></span><span class="post-informations-breaker">/</span><span>2 Comments</span>
-                </div>
-                <div class="post-content">
-                    <p>Blanditiis dapibus, aliquet ullam in ut, conubia turpis dolore vivamus ligula deserunt, vehicula
-                        praesent iure? Magni? Porta minus pariatur ante dolore, veniam cubilia urna? Eligendi commodo
-                        fugiat voluptate, rerum orci neque voluptatem cum repellendus exercitation pellentesque. </p>
-                </div>
-                <div class="devamini-oku">
-                    <a href="<?php echo URL . 'article/' . '0/' . 'hello-word' ?>">Devamını Oku</a>
-                </div>
-            </div>
+                <?php
+            }
+            ?>
             <div class="pagination">
                 <ul>
                     <li><a href="#"><i class="fa fa-angle-left" aria-hidden="true"></i></a></li>

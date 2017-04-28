@@ -11,8 +11,17 @@ class Categories
         }
     }
 
-    public function getCatId($videoid){
-        $get = $this->db->query("SELECT * FROM as_categories WHERE ");
-        return $get;
+    public function getCat(){
+        //$get = $this->db->query("SELECT * FROM categories");
+        $sql = "SELECT * FROM categories";
+        $query = $this->db->prepare($sql);
+        $query->execute();
+        return $query->fetchAll(PDO::FETCH_OBJ);
+    }
+
+    public function getCatById($videoid){
+        //Not completed.
+        $get = $this->db->query("SELECT * FROM categories WHERE ");
+        return $get->fetchAll();
     }
 }

@@ -1,2 +1,2 @@
-# personal
-Personal web site like CV and blog script.
+# Personal
+Personal is a script for that create a CV and Blog web site. It use own MVC core.

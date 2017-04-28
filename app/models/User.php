@@ -6,7 +6,6 @@ class User
 
     public function __construct()
     {
-
         echo "user modeli çağrıldı.";
     }
 }
